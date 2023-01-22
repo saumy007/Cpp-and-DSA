@@ -7,5 +7,5 @@ int main(){
     s.push(50);
     s.push(70);
     s.pop();
-    cout << s.pop();
+    cout <<"the fike"<< s.pop();
 }
