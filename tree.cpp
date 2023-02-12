@@ -14,7 +14,7 @@ public :
     }
 
 };
-node* buildtree(node8* root){
+node* buildtree(node* root){
      cout<< "Enter the data " << endl;
      int data;
      cin>>data ;
@@ -36,6 +36,6 @@ node* buildtree(node8* root){
 
 int main(){
     node* root = NULL;
-    root buildtree(root)
+    root buildtree(root);
 
 }

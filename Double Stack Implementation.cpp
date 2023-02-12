@@ -1,16 +1,17 @@
-//Double Stack Implementation
-
+//Double Stack Implementation Stack Method
+//Stack Implementation in array
+//
 class TwoStack {
-	int *arr;
-    int top1;
-    int top2;
-    int size;
+	int *arr; // Array for Stack 
+    int top1; // Top approach 
+    int top2; // end of stack
+    int size; // at end of stack 
 public:
 
     // Initialize TwoStack.
-    TwoStack(int s) {
-        this -> size = s;
-        top1 = -1;
+    TwoStack(int s) {     
+        this -> size = s;  
+         top1 = -1;
         top2 = s;
         arr = new int[s];
     }
@@ -61,3 +62,7 @@ public:
     }
 
 };
+int main(){
+    TwoStack s;
+    
+}
