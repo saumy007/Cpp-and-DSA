@@ -4,7 +4,7 @@
 //Code
 #include<iostream>
 using namespace std;
-int a;
+int a;         // global variable
 
 int &num(){
     return a;
