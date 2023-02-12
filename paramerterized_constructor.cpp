@@ -6,7 +6,11 @@ class constructc{
     int a ;
     int b ;
     public :
+    constructc(){
+        cout << "***************a default constructor is called ***************" << endl ;
+    }
     constructc(int x, int y){
+        cout << "*************** a parameterized constructor is called ***************"<<endl  ; 
         a = x;
         b = y;
     }
@@ -20,6 +24,10 @@ class constructc{
     void show(){
         cout << "The value of a is = "<<a << endl;
         cout << "The value of b is = "<<b << endl;
+    }
+
+    ~ constructc(){
+        cout<< " ***************a destructor is called ***************"<< endl ;
     }
 
 };
