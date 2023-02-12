@@ -10,19 +10,25 @@ class cop{
         a = x;
         b = y;
     }
-    cop(){} // default constructor
+    cop(){
+        cout<< "*********a constructor is called********** " << endl;
+    } // default constructor
 
 
     cop(cop &c){                 // copy constructor
         a = c.a;
         b = c.b;
+        cout<< "***************a copy constructor is called*************** " << endl;
     }
+
 
     void display(){
         cout<<"the value of this is " << a << endl;
         cout<<"the value of this is " << b << endl;
     }
-
+    ~cop(){
+        cout<< "***************a destructor is called ***************" ;
+    }
 };
 
 int main(){
