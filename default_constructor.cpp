@@ -29,8 +29,5 @@ int main(){
     obj.input();
     obj.show();
 
-
-
-
 return 0;
 }

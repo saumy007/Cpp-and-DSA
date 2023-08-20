@@ -6,10 +6,10 @@
 //    2.1use of Pointer to derived class
 #include<iostream>
 using namespace std;
-class A{
+class A {
     public :
-    int a ;
-    virtual void show ();
+    int a =10;
+    virtual void show();
 
 };
 class B : public A{
@@ -23,14 +23,14 @@ class B : public A{
 };
 int main(){
     A *baseclass;
-    A obj_base;
+    //A obj_base;
     B *derivedclass;
     B obj_derived;
     baseclass = &obj_derived; // pointing base calss to derived class 
-    baseclass->a = 34;
+    
     baseclass->show();
-    // derivedclass = &obj_derived;
-    // derivedclass->b = 94;
-    // derivedclass ->show();
+    derivedclass = &obj_derived;
+    derivedclass->b = 94;
+    derivedclass ->show();
     return 0;
 }

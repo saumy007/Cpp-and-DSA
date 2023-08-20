@@ -10,7 +10,7 @@ class cop{
         a = x;
         b = y;
     }
-    cop(){} // default constructor
+    cop(){}                           //default constructor
 
 
     cop(cop &c){                 // copy constructor

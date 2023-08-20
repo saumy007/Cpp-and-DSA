@@ -41,3 +41,4 @@ int main(){
 	cout<<"the element You have been searching for is at "<<loc<<" index value"<<endl;
 	return 0;
 }
+
