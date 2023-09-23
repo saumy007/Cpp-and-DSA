@@ -23,4 +23,5 @@ int main(){
     q++;
     cout << "Change value of q does this affect value of *p? " << q << endl;
     cout << "Change value of q does this affect value of *p? p is here " << *p;
+    
 }
