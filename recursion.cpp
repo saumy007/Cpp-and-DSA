@@ -9,9 +9,8 @@ using namespace std;
             return 1;
         }
 
-        int choti = factorial(n-1);
-        int badi = n * choti;
-        return badi;
+        
+        return n * factorial(n-1);
 
 
 
