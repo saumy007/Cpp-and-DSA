@@ -12,19 +12,23 @@ cout << "Area of Circle is : "<<CirArea <<endl;*/
         //dynamic Memory alllocation of 2D array
 
     int n;
+    //creation
     cin>>n;
+
     int** arr = new int*[n];
     for(int i = 0;i<n;i++){
         arr[i] =new int[n];
     }
 
-    //creation
+    
+     //taking input
     for(int i = 0;i<n;i++){
         for(int j = 0;j<n;j++){
             cin>>arr[i][j];
         }
     }
-    //taking input
+   
+     //taking output
     for(int i = 0;i<n;i++){
         for(int j = 0;j<n;j++){
             cout<<arr[i][j]<<" ";
@@ -32,7 +36,7 @@ cout << "Area of Circle is : "<<CirArea <<endl;*/
         //cout<<endl;
 
     }
-    //taking output
+   
 
     //to free up memory
     
