@@ -1,16 +1,35 @@
 #include<iostream>
 using namespace std;
-void print(int n){
-    if(n == 0){
-        return ;
+
+int power(int a, int b) {
+    //base case
+    if( b == 0 )
+        return 1;
+
+    if(b == 1)
+        return a;
+
+    //RECURSIVE CALL
+    int ans = power(a, b/2);
+
+    //if b is even
+    if(b%2 == 0) {
+        return ans * ans;
     }
-    cout<<n<<endl;
-    print(n-1);
-    
+    else {
+        //if b is odd
+        return a * ans * ans;
+    }
 }
-int main()
-{
-    int n;
-    cin>>n;
-    print(n);
-} 
+
+int main() {
+
+    int a,b;
+    cin >> a >> b;
+    cout << endl;
+    int ans = power(a,b);
+
+    cout << "Answer is " << ans << endl;
+
+    return 0;
+}
