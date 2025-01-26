@@ -1,38 +1,49 @@
-#include<bits/stdc++.h>
-#include<vector>
+#include <bits/stdc++.h>
 using namespace std;
-int* printDivisors(int n, int &size){
-// Write your code here
-vector<int> divisor;
-for (int i = 1; i <= n; i++) {
 
-  if (n % i == 0) {
-    divisor.push_back(i);
-  }
-}
+int* printDivisors(int n, int &size) {
+    // Use a vector to store divisors temporarily
+    vector<int> divisor;
 
-    size=divisor.size();
-    int *ans = new int[size];
-    for(int i =0;i< size;i++){
-        ans[i] = divisor[i];
+    // Find divisors
+    for (int i = 1; i * i <= n; i++) {
+        if (n % i == 0) {
+            divisor.push_back(i);
+            if (n / i != i) { // Avoid adding square root twice
+                divisor.push_back(n / i);
+            }
+        }
     }
 
-    return ans;
+    // Sort divisors in ascending order
+    sort(divisor.begin(), divisor.end());
 
+    // Update size and dynamically allocate memory for the array
+    size = divisor.size();
+    int* arr = new int[size];
+
+    // Copy divisors from vector to the array
+    copy(divisor.begin(), divisor.end(), arr);
+
+    return arr;
 }
 
-int main(){
+int main() {
     int n;
-    cout<<"Enter the number"<<endl;
-    cin>>n;
-    int size;
-    int *ans = printDivisors(n,size);
-    cout<<"The divisors are"<<endl;
-    for(int i =0;i<size;i++){
-        cout<<ans[i]<<" ";
+    cout << "Enter the number: ";
+    cin >> n;
+
+    int size = 0;
+    int* ans = printDivisors(n, size);
+
+    cout << "The divisors are: ";
+    for (int i = 0; i < size; i++) {
+        cout << ans[i] << " ";
     }
-    delete [] ans; 
+    cout << endl;
+
+    // Free dynamically allocated memory
+    delete[] ans;
+
     return 0;
 }
-
-
