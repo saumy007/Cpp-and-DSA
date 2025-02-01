@@ -2,8 +2,9 @@
 using namespace std;
 void num(int i,int n){
     if(i>n) return;
-    cout<<i<<endl;
+    cout<<i<<"first "<<endl;
     num(i+1,n);
+    cout<<i<<"second "<<endl;
     
 
 }
