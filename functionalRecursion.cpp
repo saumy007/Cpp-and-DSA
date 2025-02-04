@@ -4,10 +4,9 @@ using namespace std;
 bool f(int i, string &s)
 {
     int size = s.size();
-
-if(i>=s.size()) return true;
-if(s[i]!=s[size-i-1]) return false;
-return f(i+1,s);
+    if(i>=s.size()) return true;
+    if(s[i]!=s[size-i-1]) return false;
+    return f(i+1,s);
 
 
 }
