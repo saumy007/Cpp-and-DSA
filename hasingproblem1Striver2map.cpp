@@ -33,7 +33,7 @@ int main(){
         cin>>number;
         //fetch
 
-        cout<<mpp[number]<< endl;
+        return  mpp[number];
 
     }
 
