@@ -1,93 +1,47 @@
-
-#include<iostream>
-#include<limits>
+#include <iostream>
+#include <climits> // for INT_MIN
 using namespace std;
 
-bool isPresent(int arr[][2],int target, int row,int col){
-
-    for(int row = 0; row < 2 ; row++){
-        for (int col = 0; col < 2; col++){
-            if(arr[row][col] == target){
-                
-                return 1;
-
-            }
-        }
-    }
-
-return 0;
-}
-// row wise sum
-void PrintSum(int arr[][2], int row,int col){
-    cout << "Printing Sum ->" << endl ;
-    for(int row = 0; row < 2; row++){
+void PrintSum(int arr[][2], int row, int col) {
+    cout << "Printing Sum ->" << endl;
+    for (int i = 0; i < row; i++) {
         int sum = 0;
-        for(int col = 0; col < 2; col++){
-            sum += arr[row][col];
+        for (int j = 0; j < col; j++) {
+            sum += arr[i][j];
         }
-        cout<<sum<<" ";
+        cout << sum << endl; // sum is inside the loop
     }
-    cout <<sum<< endl; 
 }
-void largestRowSum(int arr[][2], int row,int col){
+
+int largestRowSum(int arr[][2], int row, int col) {
     int maxi = INT_MIN;
     int rowIndex = -1;
-     for(int row = 0; row < 2; row++){
+
+    for (int i = 0; i < row; i++) {
         int sum = 0;
-        for(int col = 0; col < 2; col++){
-            sum += arr[row][col];
+        for (int j = 0; j < col; j++) {
+            sum += arr[i][j];
         }
-
-        if(sum>maxi){
-            maxi = sum ;
-            rowIndex = row;
+        if (sum > maxi) {
+            maxi = sum;
+            rowIndex = i;
         }
-        cout<< "the maximum sum is " << maxi << endl;
-        return rowIndex;    
-
+    }
+    cout << "Maximum sum is " << maxi << endl;
+    return rowIndex;
 }
 
-
-
-
-int main(){
-    //making 2d array
+int main() {
     int arr[2][2];
 
-    for(int i = 0; i < 2 ; i++){
-        for (int j = 0; j < 2; j++){
-            cin >> arr[i][j]; 
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            cin >> arr[i][j];
         }
     }
 
-    /*
-    
-    for(int i = 0; i < 2 ; i++){
-        for (int j = 0; j < 2; j++){
-            cout << arr[i][j] << "   " ; 
-        }
-    }
-    
-    */
+    int index = largestRowSum(arr, 2, 2);
+    cout << "Maximum sum row index is " << index << endl;
 
-
-   cout<< " enter the element to search for " << endl;
-   int target;
-   cin >> target;
-   
-  /* 
-   if(isPresent(arr, target , 2,2)){
-    cout << "Element Found " << endl;
-   }
-   else{
-    cout<< " not Found " << endl;
-   } 
-   PrintSum(arr , 2,2);
-*/
-   int index = largestRowSum(arr , 2,2);
-cout << " Maximum index is at " << index ;
-
-
-
-return 0;
+    return 0;
 }
