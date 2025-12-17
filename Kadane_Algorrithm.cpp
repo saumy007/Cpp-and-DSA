@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 
-
+//Kadanes Algorithm to find the maximum subarray sum
 using namespace std;
 int maxSummation(vector<int> &arr) {
     int maxSum = arr[0];
